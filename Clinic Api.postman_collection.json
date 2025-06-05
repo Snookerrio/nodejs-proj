@@ -1,0 +1,667 @@
+{
+	"info": {
+		"_postman_id": "6f6688c8-b54e-4439-a3d9-90d674c49a59",
+		"name": "Clinic Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "45332352"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "UserRegister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Max",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Popov",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "maxpopov@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8001/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "yurakolodka086@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "11072006",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8001/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "UserResetPasswordById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "newPassword",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8001/auth/reset-password/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "GetAllUsers(Only Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzE4MCwiZXhwIjoxNzQ4ODc2NzgwfQ.Xd732R1Ak4jmLZAq9x2fIlaXMkScVKVYR1Jh1eVFhaw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:8001/users"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUserById(Only Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8001/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserById(Only Admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzE4MCwiZXhwIjoxNzQ4ODc2NzgwfQ.Xd732R1Ak4jmLZAq9x2fIlaXMkScVKVYR1Jh1eVFhaw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8001/users/6838e6ee9d2d11b690d81339"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserById(Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzQxOSwiZXhwIjoxNzQ4ODc3MDE5fQ.2EL8C-oDQMPaQBvLLbPehBZsKsZBrqd_a6UOHIg2Gfg"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ivan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ivanpopov@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8001/users/683dafcddda5712b5d91973e"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "DoctorCreate(Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODY4NTkzNCwiZXhwIjoxNzQ4Njg5NTM0fQ.zHSjkPzqsb9KCAVAo0dCKjevGBGI5lMMdVPPGPKIfjU"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John\",\r\n  \"surname\": \"Doe\",\r\n  \"email\": \"joh.doe@gmail.com\",\r\n  \"phone\": \"0981234567\",\r\n  \"clinics\": [\"683ad583b3169f4f9d178bed\",\"683ad59eb3169f4f9d178bf0\"],\r\n  \"services\": [\"683ad49fb3169f4f9d178be1\",\"683ad480b3169f4f9d178bde\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8001/doctors"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteDoctorById(Only Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "surname",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "clinics",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "services",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:8001/doctors/"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateDoctorById(Only Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8001/doctors/"
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllDoctors(Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzQxOSwiZXhwIjoxNzQ4ODc3MDE5fQ.2EL8C-oDQMPaQBvLLbPehBZsKsZBrqd_a6UOHIg2Gfg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/doctors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"doctors"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "surname",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDoctorById(Admin and users)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzQxOSwiZXhwIjoxNzQ4ODc3MDE5fQ.2EL8C-oDQMPaQBvLLbPehBZsKsZBrqd_a6UOHIg2Gfg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8001/doctors/683ad7c3b3169f4f9d178c01"
+					},
+					"response": []
+				},
+				{
+					"name": "GetDoctorByParams(Admin and users)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODc2MzIxNCwiZXhwIjoxNzQ4NzY2ODE0fQ.Z45wrdGZs3dXgEt_ej8-1MdXreg4yPue_rVZUhdr4sg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/doctors?search=david",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"doctors"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "-name",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "david"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clinic",
+			"item": [
+				{
+					"name": "ClinicCreate(Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Kyiv Vertebrology Clinic\",\r\n  \"doctors\": [\"683a236fe43d0846940ca242\"],\r\n  \"services\": [\"683a23bee43d0846940ca245\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/clinics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"clinics"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteClinicById(Only Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8001/clinics/"
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllClinics(Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODNhZTY5ZWJiNjc3YTlkN2EzMWMxNjAiLCJlbWFpbCI6Im1heC5wb3BvdkBnbWFpbC5jb24iLCJyb2xlIjoidXNlciIsImlhdCI6MTc0ODc2NzM3MSwiZXhwIjoxNzQ4NzcwOTcxfQ.g5evH7oz-PbpAIEutwsFDB8S_qAa2KJ5kw2xb2KzXhw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8001/clinics"
+					},
+					"response": []
+				},
+				{
+					"name": "GetClinicById(Admin and users)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzQxOSwiZXhwIjoxNzQ4ODc3MDE5fQ.2EL8C-oDQMPaQBvLLbPehBZsKsZBrqd_a6UOHIg2Gfg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8001/clinics/683ad583b3169f4f9d178bed"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateClinicById(Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODY4ODExMywiZXhwIjoxNzQ4NjkxNzEzfQ.qKyRg1ZDDPiNZ4z6VWrl8WJvDkws1xEGL3SVj2FyXoE"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"doctors\": [\"683ad878b3169f4f9d178c0e\",\"683ada3db3169f4f9d178c1d\"],\r\n  \"services\": [\"683ad4acb3169f4f9d178be4\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8001/clinics/683ad5b2b3169f4f9d178bf3"
+					},
+					"response": []
+				},
+				{
+					"name": "GetClinicByParams(Admin and users)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzgxMywiZXhwIjoxNzQ4ODc3NDEzfQ.KYy8lLb36URkW5DQtJHEvT0KI_0HC3CO3M8mG3SLJw4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/clinics?search=Vertebrology",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"clinics"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "-name",
+									"disabled": true
+								},
+								{
+									"key": "service",
+									"value": "683ad49fb3169f4f9d178be1",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "Vertebrology"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "ServiceCreate(Only Admin)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8001/services"
+					},
+					"response": []
+				},
+				{
+					"name": "ServiceUpdate(Only Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8001/services"
+					},
+					"response": []
+				},
+				{
+					"name": "ServiceDeleteById(Only Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8001/services/"
+					},
+					"response": []
+				},
+				{
+					"name": "ServiceGetById(Admin and users)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzgxMywiZXhwIjoxNzQ4ODc3NDEzfQ.KYy8lLb36URkW5DQtJHEvT0KI_0HC3CO3M8mG3SLJw4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8001/services/683ad480b3169f4f9d178bde"
+					},
+					"response": []
+				},
+				{
+					"name": "ServiceGelAll(Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzgxMywiZXhwIjoxNzQ4ODc3NDEzfQ.KYy8lLb36URkW5DQtJHEvT0KI_0HC3CO3M8mG3SLJw4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"services"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ServiceGetByParam(Admin and Users)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM4ZTZlZTlkMmQxMWI2OTBkODEzMzkiLCJlbWFpbCI6Inl1cmFrb2xvZGthMDg2QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODg3MzgxMywiZXhwIjoxNzQ4ODc3NDEzfQ.KYy8lLb36URkW5DQtJHEvT0KI_0HC3CO3M8mG3SLJw4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/services?search=de",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"services"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "de"
+								},
+								{
+									"key": "order",
+									"value": "name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
