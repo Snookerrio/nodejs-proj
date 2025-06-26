@@ -26,15 +26,13 @@ Users can search for doctors, services, and clinics by parameters, and administr
 - Users have limited access (search for doctors/clinics by parameters, without viewing the entire list)
 - Administrators have full access and can filter and sort
 
-
-
-
 ## Starting a project
 
-   1.Clone the repository
-   2.Install dependencies(npm install)
-   3.Create an .env file in the project root
-   4.Start the project (npm start)
+1.Clone the repository
+2.Install dependencies(npm install)
+3.To automatically format all code in a project according to Prettier rules, do:(npx prettier --write .)
+4.Create an .env file in the project root
+5.Start the project (npm start)
 
 ## API Structure
 
@@ -94,4 +92,4 @@ The collection is located in the Clinic Api.postman_collection.json file, it con
 ## Swagger
 
 API documentation is available at:
-http://localhost:yourport/docs
+http://localhost:yourport/docs (And change the port in the swagger.config.ts file to your own)
