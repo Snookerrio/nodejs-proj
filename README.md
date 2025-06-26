@@ -32,60 +32,60 @@ Users can search for doctors, services, and clinics by parameters, and administr
 ## Starting a project
 
    1.Clone the repository
-   2.Install dependencies
+   2.Install dependencies(npm install)
    3.Create an .env file in the project root
    4.Start the project (npm start)
 
-## Структура API
+## API Structure
 
 🔐 Auth
-POST /auth/register — реєстрація користувача
+POST /auth/register — user registration
 
-POST /auth/login — авторизація
+POST /auth/login — user login
 
-POST /auth/reset-password/:id — скидання пароля (авторизований)
+POST /auth/reset-password/:id — password reset (authorized)
 
 🏨 Clinics
-GET /clinics — пошук для user, повний список для admin
+GET /clinics — search for user, full list for admin
 
-GET /clinics/:id — перегляд клініки
+GET /clinics/:id — view clinic
 
-POST /clinics — створення клініки (admin)
+POST /clinics — create clinic (admin)
 
-PUT /clinics/:id — оновлення (admin)
+PUT /clinics/:id — update clinic (admin)
 
-DELETE /clinics/:id — видалення (admin)
+DELETE /clinics/:id — delete clinic (admin)
 
 👨‍⚕️ Doctors
-GET /doctors — пошук для user, повний список для admin
+GET /doctors — search for user, full list for admin
 
-GET /doctors/:id — перегляд лікаря
+GET /doctors/:id — view doctor
 
-POST /doctors — створення лікаря (admin)
+POST /doctors — create doctor (admin)
 
-PUT /doctors/:id — оновлення (admin)
+PUT /doctors/:id — update doctor (admin)
 
-DELETE /doctors/:id — видалення (admin)
+DELETE /doctors/:id — delete doctor (admin)
 
 💉 Services
-GET /services — пошук для user, повний список для admin
+GET /services — search for user, full list for admin
 
-GET /services/:id — один сервіс
+GET /services/:id — view service
 
-POST /services — створення (admin)
+POST /services — create service (admin)
 
-PUT /services/:id — оновлення (admin)
+PUT /services/:id — update service (admin)
 
-DELETE /services/:id — видалення (admin)
+DELETE /services/:id — delete service (admin)
 
 👥 Users (admin only)
-GET /users — список користувачів
+GET /users — list of users
 
-GET /users/:id — один користувач
+GET /users/:id — single user
 
-PUT /users/:id — оновлення користувача
+PUT /users/:id — update user
 
-DELETE /users/:id — видалення
+DELETE /users/:id — delete user
 
 ## Postman
 
