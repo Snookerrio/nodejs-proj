@@ -94,4 +94,4 @@ The collection is located in the Clinic Api.postman_collection.json file, it con
 ## Swagger
 
 API documentation is available at:
-http://localhost:8001/docs
+http://localhost:yourport/docs
